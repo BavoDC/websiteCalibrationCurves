@@ -22,7 +22,7 @@ E.W. (2016). A calibration hierarchy for risk models was defined: from utopia to
     
     <a class="navbar-brand me-2" href="../index.html">CalibrationCurves</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,7 +115,8 @@ E.W. (2016). A calibration hierarchy for risk models was defined: from utopia to
 <span>  lty.ideal <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  col.ideal <span class="op">=</span> <span class="st">"red"</span>,</span>
 <span>  lwd.ideal <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>  allowPerfectPredictions <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  allowPerfectPredictions <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  argzLoess <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">alist</a></span><span class="op">(</span>degree <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -366,6 +367,10 @@ Defaults are <code>d1lab="1"</code> for events and <code>d0lab="0"</code> for no
 <dd><p>Logical, indicates whether perfect predictions (i.e. values of either 0 or 1) are allowed. Default is <code>FALSE</code>, since we transform
 the predictions using the logit transformation to calculate the calibration measures. In case of 0 and 1, this results in minus infinity and infinity, respectively. if
 <code>allowPerfectPredictions = TRUE</code>, 0 and 1 are replaced by 1e-8 and 1 - 1e-8, respectively.</p></dd>
+
+
+<dt>argzLoess</dt>
+<dd><p>a list with arguments passed to the <code><a href="https://rdrr.io/r/stats/loess.html" class="external-link">loess</a></code> function</p></dd>
 
 </dl></div>
     <div class="section level2">
