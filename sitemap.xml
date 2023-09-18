@@ -25,10 +25,19 @@
     <loc>https://bavodc.github.io/CalibrationCurves/reference/dot-rcspline.plot.html</loc>
   </url>
   <url>
+    <loc>https://bavodc.github.io/CalibrationCurves/reference/genCalCurve.html</loc>
+  </url>
+  <url>
     <loc>https://bavodc.github.io/CalibrationCurves/reference/index.html</loc>
   </url>
   <url>
+    <loc>https://bavodc.github.io/CalibrationCurves/reference/poissontraindata.html</loc>
+  </url>
+  <url>
     <loc>https://bavodc.github.io/CalibrationCurves/reference/print.CalibrationCurve.html</loc>
+  </url>
+  <url>
+    <loc>https://bavodc.github.io/CalibrationCurves/reference/print.GeneralizedCalibrationCurve.html</loc>
   </url>
   <url>
     <loc>https://bavodc.github.io/CalibrationCurves/reference/print.ggplotCalibrationCurve.html</loc>
