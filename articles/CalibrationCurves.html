@@ -59,7 +59,7 @@
       <img src="" class="logo" alt=""><h1>Introduction to the CalibrationCurves package</h1>
                         <h4 data-toc-skip class="author">Bavo De Cock Campo</h4>
             
-            <h4 data-toc-skip class="date">2023-09-18</h4>
+            <h4 data-toc-skip class="date">2023-09-19</h4>
       
       
       <div class="d-none name"><code>CalibrationCurves.Rmd</code></div>
@@ -71,7 +71,7 @@
 <p><img src="CalibrationCurves.png" width="25%"></p>
 </div>
 <p><br clear="right">
-In this document, we give you a brief overview of the basic functionality of the <code>CalibrationCurves</code> package. We advise you to also consult the help-pages of the functions to get an exhaustive overview of the functionality.</p>
+In this document, we give you a brief overview of the basic functionality of the <code>CalibrationCurves</code> package. In addition, we present the theoretical framework behind calibration and provide some illustrative examples to give the reader a better insight into the calibration assessment of a predictive model. We advise you to also consult the help-pages of the functions to get an exhaustive overview of the functionality.</p>
 <p>We tried to tailor the explanation of the concepts to professionals with different backgrounds. Please, do contact me if you feel that something is unclear so that I can adjust (and hopefully improve) it. In addition, don’t hesitate to send any suggestions you might have and bug reports to the package author.</p>
 <div class="section level2" number="1">
 <h2 id="assessing-the-performance-of-risk-prediction-models">
@@ -109,20 +109,30 @@ where <span class="math inline">\(\eta_i\)</span> denotes the linear predictor. 
 <h3 id="different-aspects-of-the-predictive-performance">
 <span class="header-section-number">1.2</span> Different aspects of the predictive performance<a class="anchor" aria-label="anchor" href="#different-aspects-of-the-predictive-performance"></a>
 </h3>
-<p>To assess how well the model is able to predict (the probability of) the outcome, we assess two different aspects of the model <span class="citation">(Van Calster et al. 2016, 2019; Alba et al. 2017)</span>:</p>
+<p>To assess how well the model is able to predict (the probability of) the outcome, we assess two different aspects of the model <span class="citation">(Alba et al., 2017; Van Calster et al., 2016, 2019)</span>:</p>
 <ol style="list-style-type: lower-alpha">
 <li>
 <em>discrimination</em>;</li>
 <li>
 <em>calibration</em>.</li>
 </ol>
-<p>With <em>discrimination</em>, we refer to the model’s ability to differentiate between observations that have the event and observations that have not. In this context, this translates to giving higher risk estimates for patients with the event than patients without the event. We commonly assess this using the area under the receiver operating characteristic curve. However, discrimination performance does not tell us how accurate the predictions are. The estimated risk may result in good discrimination and can be inaccurate at the same time. We refer to the accuracy of the predictions as the <em>calibration</em>. Hence, hereby we assess the agreement between the estimated and observed number of events <span class="citation">(Van Calster et al. 2016)</span>. We say that a prediction model is calibrated if the predicted risks correspond to the observations proportions of the event.</p>
+<p>With <em>discrimination</em>, we refer to the model’s ability to differentiate between observations that have the event and observations that have not. In this context, this translates to giving higher risk estimates for patients with the event than patients without the event. We commonly assess this using the area under the receiver operating characteristic curve. However, discrimination performance does not tell us how accurate the predictions are. The estimated risk may result in good discrimination and can be inaccurate at the same time. We refer to the accuracy of the predictions as the <em>calibration</em>. Hence, hereby we assess the agreement between the estimated and observed number of events <span class="citation">(Van Calster et al., 2016)</span>. We say that a prediction model is calibrated if the predicted risks correspond to the observed proportions of the event.</p>
 </div>
 <div class="section level3" number="1.3">
-<h3 id="how-do-we-assess-calibration-performance">
-<span class="header-section-number">1.3</span> How do we assess calibration performance?<a class="anchor" aria-label="anchor" href="#how-do-we-assess-calibration-performance"></a>
+<h3 id="assessing-the-calibration-performance-of-a-risk-prediction-model">
+<span class="header-section-number">1.3</span> Assessing the calibration performance of a risk prediction model<a class="anchor" aria-label="anchor" href="#assessing-the-calibration-performance-of-a-risk-prediction-model"></a>
 </h3>
-<p>One way to examine the calibration of risk predictions, is by using calibration curves. A calibration curve visualizes the correspondence between the model’s predicted risks and the observed proportion. When we have a perfect agreement between the observed and predicted proportion the calibration curve coincides with the ideal curve (a diagonal line). This scenario is visualized in Figure <a href="#fig:PerfectCalibration">1.1</a>.</p>
+<div class="section level4" number="1.3.1">
+<h4 id="a-mathematical-perspective">
+<span class="header-section-number">1.3.1</span> A mathematical perspective<a class="anchor" aria-label="anchor" href="#a-mathematical-perspective"></a>
+</h4>
+<p>One way to examine the calibration of risk predictions, is by using calibration curves <span class="citation">(De Cock Campo, 2023; Steyerberg, 2019; Van Calster et al., 2016, 2019)</span>. A calibration curve maps the predicted probabilities <span class="math inline">\(f(\boldsymbol{x}_i)\)</span> to the actual event probabilities <span class="math inline">\(P(y_i = 1| f(\boldsymbol{x}_i))\)</span> and visualizes the correspondence between the model’s predicted risks and the true probabilities. For perfectly calibrated predictions, the calibration curve equals the diagonal, i.e. <span class="math inline">\(P(y_i = 1 | f(\boldsymbol{x}_i)) = f(\boldsymbol{x}_i) \ \forall \ i\)</span> where <span class="math inline">\(\forall \ i\)</span> denotes for all <span class="math inline">\(i\)</span>.</p>
+</div>
+<div class="section level4" number="1.3.2">
+<h4 id="a-practical-perspective">
+<span class="header-section-number">1.3.2</span> A practical perspective<a class="anchor" aria-label="anchor" href="#a-practical-perspective"></a>
+</h4>
+<p>In practice, we typically assess the model’s calibration on a validation set. In this setting, a calibration curve visualizes the correspondence between the model’s predicted risks and the observed proportion. When we have a perfect agreement between the observed and predicted proportion the calibration curve coincides with the ideal curve (a diagonal line). This scenario is visualized in Figure <a href="#fig:PerfectCalibration">1.1</a>.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:PerfectCalibration"></span>
 <p class="caption">
@@ -130,7 +140,7 @@ Figure 1.1: Example of a perfectly calibrated model
 </p>
 <img src="PerfectCalibration.png" alt="Example of a perfectly calibrated model" width="100%">
 </div>
-<p>We therefore assess the calibration performance of a predictive model on a data set other than the training set. Hereby, we obtain an indication of how well our risk prediction is able to generalize to other data sets and how accurate its out-of-sample predictions are. In general, the prediction model will show some miscalibration and the calibration curve gives us a visual depiction of how badly the model is miscalibrated. The further from the diagonal line, the worse the calibration. Figure <a href="#fig:Overfitted">1.2</a> depicts an example of a model that is miscalibrated and is a typical example of a model that is overfitted to the training data. This particular model has predictions that are too extreme: high risks are overestimated and low risks are underestimated.</p>
+<p>By assessing the calibration performance on a data set other than the training set, we obtain an indication of how well our risk prediction is able to generalize to other data sets and how accurate its out-of-sample predictions are. In general, the prediction model will show some miscalibration and the calibration curve gives us a visual depiction of how badly the model is miscalibrated. The further from the diagonal line, the worse the calibration. Figure <a href="#fig:Overfitted">1.2</a> depicts an example of a model that is miscalibrated and is a typical example of a model that is overfitted to the training data. This particular model has predictions that are too extreme: high risks are overestimated and low risks are underestimated.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:Overfitted"></span>
 <p class="caption">
@@ -146,9 +156,10 @@ Figure 1.3: Example of a miscalibrated model due to underfitting
 </p>
 <img src="Underfitted.png" alt="Example of a miscalibrated model due to underfitting" width="100%">
 </div>
-<div class="section level4" number="1.3.1">
+</div>
+<div class="section level4" number="1.3.3">
 <h4 id="how-do-we-construct-a-calibration-curve">
-<span class="header-section-number">1.3.1</span> How do we construct a calibration curve?<a class="anchor" aria-label="anchor" href="#how-do-we-construct-a-calibration-curve"></a>
+<span class="header-section-number">1.3.3</span> How do we construct a calibration curve?<a class="anchor" aria-label="anchor" href="#how-do-we-construct-a-calibration-curve"></a>
 </h4>
 <p>Fitting a logistic regression model to the training data results in an estimate for the parameter vector <span class="math inline">\(\boldsymbol{\beta}\)</span>, which we denote as <span class="math inline">\(\widehat{\boldsymbol{\beta}}\)</span>. The latter contains the estimated effects of the included covariates (e.g. proportion of solid tissue). To obtain a risk estimate for patient <span class="math inline">\(i\)</span>, we multiply the covariate vector <span class="math inline">\(\boldsymbol{x}_i\)</span> (which contains all the patient-specific characteristics) with the estimated parameter vector <span class="math inline">\(\widehat{\boldsymbol{\beta}}\)</span> to obtain the linear predictor <span class="math inline">\(\widehat{\eta}_i\)</span>
 <span class="math display">\[\begin{align*}
@@ -165,15 +176,15 @@ Figure 1.3: Example of a miscalibrated model due to underfitting
 as a general notation to denote the predicted probability of the risk prediction model.</p>
 <p>One way to compute the calibration curve, is by using a logistic regression model
 <span class="math display" id="eq:logcal">\[\begin{align*}
-  \text{logit}(P({}_{*} y_i = 1| {}_{*} \widehat{\pi}_i)) &amp;= \alpha + \zeta {}_{*} \text{logit}({}_{*} \widehat{\pi}_i)
+  \text{logit}(P({}_{*} y_i = 1| {}_{*} \widehat{\pi}_i)) &amp;= \alpha + \zeta \ \text{logit}({}_{*} \widehat{\pi}_i)
   \tag{1.1}
 \end{align*}\]</span>
 where we estimate the observed proportions as a function of the predicted probabilities. This model fit yields a logistic calibration curve. Note that <span class="math inline">\(\text{logit}({}_{*} \widehat{\pi}_i) = {}_{*} \widehat{\eta}_i\)</span> when <span class="math inline">\({}_{*} \widehat{\pi}_i\)</span> is estimated using a logistic regression model (see <a href="#eq:logcal">(1.1)</a>).</p>
 <p>Alternatively, we can obtain flexible, nonlinear calibration curve using a non-parametric smoother such as loess or restricted cubic splines. In our package, we provide both types of calibration curves.</p>
 </div>
-<div class="section level4" number="1.3.2">
+<div class="section level4" number="1.3.4">
 <h4 id="calibration-intercept-and-slope">
-<span class="header-section-number">1.3.2</span> Calibration intercept and slope<a class="anchor" aria-label="anchor" href="#calibration-intercept-and-slope"></a>
+<span class="header-section-number">1.3.4</span> Calibration intercept and slope<a class="anchor" aria-label="anchor" href="#calibration-intercept-and-slope"></a>
 </h4>
 <p>In addition to the calibration curve, we have two measures that summarize different aspects of the calibration performance:</p>
 <ul>
@@ -374,7 +385,7 @@ In addition to the plot, the function returns an object of the class <code>Calib
 <h2 id="assessing-the-performance-of-other-types-of-prediction-models">
 <span class="header-section-number">2</span> Assessing the performance of other types of prediction models<a class="anchor" aria-label="anchor" href="#assessing-the-performance-of-other-types-of-prediction-models"></a>
 </h2>
-<p>In my recent paper, I propose an extension of the logistic calibration framework to distributions that belong to the exponential family with probability density function (pdf)
+<p>In my recent paper <span class="citation">(De Cock Campo, 2023)</span>, I propose an extension of the logistic calibration framework to distributions that belong to the exponential family with probability density function (pdf)
 <span class="math display">\[\begin{align*}
         f(y_i; \theta_i, \phi, w_i) = \exp\left( \frac{y_i \theta_i - b(\theta_i)}{\phi} w_i  + c(y_i, \phi, w_i)\right).
 \end{align*}\]</span></p>
@@ -416,8 +427,8 @@ Hereby, we assess to which extent the observed empirical average equals the aver
 <h4 id="training-the-model-1">
 <span class="header-section-number">2.2.1</span> Training the model<a class="anchor" aria-label="anchor" href="#training-the-model-1"></a>
 </h4>
-<p>To illustrate the functionality, the package has two example data sets with a poisson distributed variable as outcome: <code>poissontraindata</code> and <code>poissontestdata</code>. These are two synthetically generated data sets (using the same underlying process/settings to generate the data) to illustrate the functionality of the <code>CalibrationCurves</code> package.</p>
-<p>The <code>poissontraindata</code> data frame represents the data that we will use to develop our prediction model</p>
+<p>To illustrate the functionality, the package has two example data sets with a poisson distributed outcome variable: <code>poissontraindata</code> and <code>poissontestdata</code>. These are two synthetically generated data sets (using the same underlying process/settings to generate the data) to illustrate the functionality of the <code>CalibrationCurves</code> package.</p>
+<p>The <code>poissontraindata</code> data frame represents the data that we will use to develop our prediction model.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"poissontraindata"</span><span class="op">)</span></span></code></pre></div>
 <p>In this data frame, we have five covariates and one response variable <code>y</code>.</p>
@@ -528,10 +539,10 @@ In addition to the plot, the function returns an object of the class <code>Gener
 </h3>
 <p>To construct the logistic calibration curve (see <a href="#how-do-we-construct-a-calibration-curve">How do we construct a calibration curve?</a>), we fit the model
 <span class="math display">\[\begin{align*}
-\text{logit}(E[{}_{*} y_i | {}_{*} \widehat{\pi}_i]) = \alpha + \zeta {}_{*} \text{logit}({}_{*} \widehat{\pi}_i)
+\text{logit}(E[{}_{*} y_i | {}_{*} \widehat{\pi}_i]) = \alpha + \zeta \ \text{logit}({}_{*} \widehat{\pi}_i)
 \end{align*}\]</span>
 Here, <span class="math inline">\(\zeta\)</span> corresponds to the calibration slope. The calibration intercept from the <code>val.prob</code> function from the <code>rms</code> package corresponds to <span class="math inline">\(\alpha \neq \alpha_c\)</span>.</p>
-<p>In the <code>CalibrationCurves</code> package, the calibration intercept corresponds to <span class="math inline">\(\alpha_c\)</span> which assesses the calibration in the large. Using this formulation, the calibration intercept indicates whether the predicted risks are under- or overestimated on average and this is conform with the definition of the calibration intercept in the article ‘A calibration hierarchy for risk models was defined: from utopia to empirical data’ (and other articles published on this topic) <span class="citation">(Van Calster et al. 2016, 2019)</span>. We compute <span class="math inline">\(\alpha_c\)</span> using
+<p>In the <code>CalibrationCurves</code> package, the calibration intercept corresponds to <span class="math inline">\(\alpha_c\)</span> which assesses the calibration in the large. Using this formulation, the calibration intercept indicates whether the predicted risks are under- or overestimated on average and this is conform with the definition of the calibration intercept in the article ‘A calibration hierarchy for risk models was defined: from utopia to empirical data’ (and other articles published on this topic) <span class="citation">(Van Calster et al., 2016, 2019)</span>. We compute <span class="math inline">\(\alpha_c\)</span> using
 <span class="math display">\[\begin{align*}
 \text{logit}(E[{}_{*} y_i | {}_{*} \widehat{\pi}_i]) = \alpha_c + \text{offset}(\text{logit}({}_{*} \widehat{\pi}_i)).
 \end{align*}\]</span>
@@ -584,15 +595,21 @@ where we fix <span class="math inline">\(\zeta = 1\)</span> by including <span c
 <h2 id="references">
 <span class="header-section-number">4</span> References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Alba2017" class="csl-entry">
-Alba, Ana Carolina, Thomas Agoritsas, Michael Walsh, Steven Hanna, Alfonso Iorio, P. J Devereaux, Thomas McGinn, and Gordon Guyatt. 2017. <span>“<span class="nocase">Discrimination and Calibration of Clinical Prediction Models: Users’ Guides to the Medical Literature</span>.”</span> <em>JAMA : The Journal of the American Medical Association</em> 318 (14): 1377–84.
+Alba, A. C., Agoritsas, T., Walsh, M., Hanna, S., Iorio, A., Devereaux, P. J., McGinn, T., &amp; Guyatt, G. (2017). <span class="nocase">Discrimination and Calibration of Clinical Prediction Models: Users’ Guides to the Medical Literature</span>. <em>JAMA : The Journal of the American Medical Association</em>, <em>318</em>(14), 1377–1384.
+</div>
+<div id="ref-Campo2023GCF" class="csl-entry">
+De Cock Campo, B. (2023). <em>Towards reliable predictive analytics: A generalized calibration framework</em>. <a href="https://arxiv.org/abs/2309.08559" class="external-link">https://arxiv.org/abs/2309.08559</a>
+</div>
+<div id="ref-ClinicalPredictionModels" class="csl-entry">
+Steyerberg, E. W. (2019). <em>Clinical prediction models: A practical approach to development, validation, and updating</em>. Springer International Publishing AG.
 </div>
 <div id="ref-VanCalster2019" class="csl-entry">
-Van Calster, Ben, David J McLernon, Maarten van Smeden, Laure Wynants, Ewout W Steyerberg, Patrick Bossuyt, Gary S Collins, Petra MacAskill, Karel G. M Moons, and Anew J Vickers. 2019. <span>“Calibration: The Achilles Heel of Predictive Analytics.”</span> <em>BMC Medicine</em> 17 (1): 230–30.
+Van Calster, B., McLernon, D. J., Smeden, M. van, Wynants, L., Steyerberg, E. W., Bossuyt, P., Collins, G. S., MacAskill, P., Moons, K. G. M., &amp; Vickers, A. J. (2019). Calibration: The achilles heel of predictive analytics. <em>BMC Medicine</em>, <em>17</em>(1), 230–230.
 </div>
 <div id="ref-VanCalster2016" class="csl-entry">
-Van Calster, Ben, Daan Nieboer, Yvonne Vergouwe, Bavo De Cock, Michael J Pencina, and Ewout W Steyerberg. 2016. <span>“A Calibration Hierarchy for Risk Models Was Defined: From Utopia to Empirical Data”</span> 74: 167–76.
+Van Calster, B., Nieboer, D., Vergouwe, Y., De Cock, B., Pencina, M. J., &amp; Steyerberg, E. W. (2016). A calibration hierarchy for risk models was defined: From utopia to empirical data. <em>Journal of Clinical Epidemiology</em>, <em>74</em>, 167–176.
 </div>
 </div>
 </div>
