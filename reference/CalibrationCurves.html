@@ -7,7 +7,7 @@ If you are not familiar with the theory and/or application of calibration, you c
  In this paper, we provide the theoretical background on the generalized calibration framework and illustrate its applicability with some prototypical examples of both statistical and
  machine learning prediction models that are well-calibrated, overfit and underfit.
 Originally, the package only contained functions to assess the calibration of prediction models with a binary outcome. The details section provides some background information on the
- history of the package's development."><title>General information on the package and its functions — CalibrationCurves • CalibrationCurves</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="General information on the package and its functions — CalibrationCurves"><meta property="og:description" content="Using this package, you can assess the calibration performance of your prediction model. That is, to which extent the predictions and correspond with what we observe empirically.
+ history of the package's development."><title>General information on the package and its functions — CalibrationCurves • CalibrationCurves</title><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="General information on the package and its functions — CalibrationCurves"><meta property="og:description" content="Using this package, you can assess the calibration performance of your prediction model. That is, to which extent the predictions and correspond with what we observe empirically.
  To assess the calibration of model with a binary outcome, you can use the val.prob.ci.2 or the valProbggplot function. If the outcome of your prediction model
  is not binary but follows a different distribution of the exponential family, you can employ the genCalCurve function.
 If you are not familiar with the theory and/or application of calibration, you can consult the vignette of the package. This vignette provides a comprehensive overview of the theory and
@@ -22,11 +22,11 @@ Originally, the package only contained functions to assess the calibration of pr
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light" data-bs-theme="light"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">CalibrationCurves</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,7 +70,7 @@ Originally, the package only contained functions to assess the calibration of pr
 
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Some years ago, Yvonne Vergouwe and Ewout Steyerberg adapted the function <code>val.prob</code> from the rms-package (<a href="https://cran.r-project.org/package=rms" class="external-link">https://cran.r-project.org/package=rms</a>) into <code>val.prob.ci</code> and added the following functions to <code>val.prob</code>:</p>
+    <p>Some years ago, Yvonne Vergouwe and Ewout Steyerberg adapted the function <code><a href="https://rdrr.io/pkg/rms/man/val.prob.html" class="external-link">val.prob</a></code> from the rms-package (<a href="https://cran.r-project.org/package=rms" class="external-link">https://cran.r-project.org/package=rms</a>) into <code>val.prob.ci</code> and added the following functions to <code><a href="https://rdrr.io/pkg/rms/man/val.prob.html" class="external-link">val.prob</a></code>:</p>
 <ul><li><p>Scaled Brier score by relating to max for average calibrated Null model</p></li>
 <li><p>Risk distribution according to outcome</p></li>
 <li><p>0 and 1 to indicate outcome label; set with <code>d1lab=".."</code>, <code>d0lab=".."</code></p></li>
@@ -84,7 +84,7 @@ this to <code><a href="val.prob.ci.2.html">val.prob.ci.2</a></code>:</p><ul><li>
     (CL.BT=T will do bootstrapping with 2000 bootstrap samples, however
     this will take a while)</p></li>
 <li><p>RCS: 3 to 5 knots can be used</p><ul><li><p>the knot locations will be estimated using default quantiles of
-         x (by <code>rcspline.eval</code>, see <code>rcspline.plot</code> and <code>rcspline.eval</code>)</p></li>
+         x (by <code><a href="https://rdrr.io/pkg/Hmisc/man/rcspline.eval.html" class="external-link">rcspline.eval</a></code>, see <code><a href="https://rdrr.io/pkg/Hmisc/man/rcspline.plot.html" class="external-link">rcspline.plot</a></code> and <code><a href="https://rdrr.io/pkg/Hmisc/man/rcspline.eval.html" class="external-link">rcspline.eval</a></code>)</p></li>
 <li><p>if estimation problems occur at the specified number of knots
          (nr.knots, default is 5), the analysis is repeated with
           nr.knots-1 until the problem has disappeared and the function stops if there is still an estimation problem with 3 knots</p></li>
@@ -120,11 +120,11 @@ A spline-based tool to assess and visualize the calibration of multiclass risk p
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by Bavo De Cock Campo.</p>
+  <p>Developed by Bavo De Cock Campo.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
     </footer></div>
