@@ -429,30 +429,6 @@ H_i(t) = H_0(t) \exp( \eta_i)
 \end{align*}\]</span>
 where <span class="math inline">\(\zeta\)</span> is the calibration slope that quantifies the relationship between the predicted and observed hazards. Similarly to <a href="#eq:logcal">(1.1)</a>, <span class="math inline">\(\zeta\)</span> indicates whether the model is over- (<span class="math inline">\(\zeta &lt; 1\)</span>) or underfitted (<span class="math inline">\(\zeta &gt;1\)</span>). Note that we do not have a calibration intercept in this model. This is because the baseline hazard function <span class="math inline">\(h_0(t)\)</span> is not estimated in the Cox model, and the model is only identified up to a proportionality constant. As a result, any intercept term would be absorbed into the baseline hazard function, and would not be separately identifiable.</p>
 <p>We do not explicitly specify the time point <span class="math inline">\(t\)</span>, as calibration can be assessed either across all follow-up time points or at a specific time point of interest. To estimate this model, we can fit a Cox proportional hazards model.</p>
-</div>
-</div>
-</div>
-<div class="section level2" number="3">
-<h2 id="assessing-the-performance-of-other-types-of-prediction-models">
-<span class="header-section-number">3</span> Assessing the performance of other types of prediction models<a class="anchor" aria-label="anchor" href="#assessing-the-performance-of-other-types-of-prediction-models"></a>
-</h2>
-<p>In my recent paper <span class="citation">(De Cock Campo 2023)</span>, I propose an extension of the logistic calibration framework to distributions that belong to the exponential family with probability density function (pdf)
-<span class="math display">\[\begin{align*}
-        f(y_i; \theta_i, \phi, w_i) = \exp\left( \frac{y_i \theta_i - b(\theta_i)}{\phi} w_i  + c(y_i, \phi, w_i)\right).
-\end{align*}\]</span></p>
-<p>
-Here, <span class="math inline">\(\theta_i\)</span> is the natural parameter, <span class="math inline">\(\phi\)</span> the dispersion parameter and <span class="math inline">\(w_i\)</span> the weight. <span class="math inline">\(b(\cdot)\)</span> and <span class="math inline">\(c(\cdot)\)</span> are known functions. Similar to before, we assume that there is an unknown regression function <span class="math inline">\(r(\boldsymbol{x}_i) = E[y_i | \boldsymbol{x}_i]\)</span>. To approximate this unknown function, we rely on prediction models with the following functional form
-<span class="math display" id="eq:PredModel">\[\begin{align*}
-    E[y_i | \boldsymbol{x}_i] = \mu_i = f(\boldsymbol{x}_i).
-    \tag{3.1}
-\end{align*}\]</span></p>
-<p>
-To estimate <a href="#eq:PredModel">(3.1)</a>, we can use a generalized linear model
-<span class="math display" id="eq:GLM">\[\begin{align*}
-        g(E[y_i | \boldsymbol{x}_i]) = \boldsymbol{x}_i^\top \boldsymbol{\beta} = \eta_i.
-        \tag{3.2}
-\end{align*}\]</span>
-where <span class="math inline">\(g(\cdot)\)</span> denotes the link function. Alternatively, we can estimate <a href="#eq:PredModel">(3.1)</a> using machine learning methods. Using the model fit, we obtain the predictions <span class="math inline">\(\widehat{\mu}_i = \widehat{f}(\boldsymbol{x}_i)\)</span>.</p>
 <p>Below is a short example how you can assess the calibration performance using the package.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
@@ -508,6 +484,30 @@ where <span class="math inline">\(g(\cdot)\)</span> denotes the link function. A
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;   Uno AUC     2.5 %   97. 5 % </span></span>
 <span><span class="co">#&gt; 0.6856354 0.6305826 0.7406882</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="section level2" number="3">
+<h2 id="assessing-the-performance-of-other-types-of-prediction-models">
+<span class="header-section-number">3</span> Assessing the performance of other types of prediction models<a class="anchor" aria-label="anchor" href="#assessing-the-performance-of-other-types-of-prediction-models"></a>
+</h2>
+<p>In my recent paper <span class="citation">(De Cock Campo 2023)</span>, I propose an extension of the logistic calibration framework to distributions that belong to the exponential family with probability density function (pdf)
+<span class="math display">\[\begin{align*}
+        f(y_i; \theta_i, \phi, w_i) = \exp\left( \frac{y_i \theta_i - b(\theta_i)}{\phi} w_i  + c(y_i, \phi, w_i)\right).
+\end{align*}\]</span></p>
+<p>
+Here, <span class="math inline">\(\theta_i\)</span> is the natural parameter, <span class="math inline">\(\phi\)</span> the dispersion parameter and <span class="math inline">\(w_i\)</span> the weight. <span class="math inline">\(b(\cdot)\)</span> and <span class="math inline">\(c(\cdot)\)</span> are known functions. Similar to before, we assume that there is an unknown regression function <span class="math inline">\(r(\boldsymbol{x}_i) = E[y_i | \boldsymbol{x}_i]\)</span>. To approximate this unknown function, we rely on prediction models with the following functional form
+<span class="math display" id="eq:PredModel">\[\begin{align*}
+    E[y_i | \boldsymbol{x}_i] = \mu_i = f(\boldsymbol{x}_i).
+    \tag{3.1}
+\end{align*}\]</span></p>
+<p>
+To estimate <a href="#eq:PredModel">(3.1)</a>, we can use a generalized linear model
+<span class="math display" id="eq:GLM">\[\begin{align*}
+        g(E[y_i | \boldsymbol{x}_i]) = \boldsymbol{x}_i^\top \boldsymbol{\beta} = \eta_i.
+        \tag{3.2}
+\end{align*}\]</span>
+where <span class="math inline">\(g(\cdot)\)</span> denotes the link function. Alternatively, we can estimate <a href="#eq:PredModel">(3.1)</a> using machine learning methods. Using the model fit, we obtain the predictions <span class="math inline">\(\widehat{\mu}_i = \widehat{f}(\boldsymbol{x}_i)\)</span>.</p>
 <div class="section level3" number="3.1">
 <h3 id="generalized-calibration-curves">
 <span class="header-section-number">3.1</span> Generalized calibration curves<a class="anchor" aria-label="anchor" href="#generalized-calibration-curves"></a>
