@@ -1,63 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/404.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/404.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/articles/CalibrationCurves.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/articles/CalibrationCurves.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/articles/index.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/authors.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/authors.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/index.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/index.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/auc.nonpara.mw.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/auc.nonpara.mw.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/CalibrationCurves.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/CalibrationCurves.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/dot-rcspline.plot.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/dot-rcspline.plot.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/genCalCurve.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/genCalCurve.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/grapes-less-than-equals-grapes.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/grapes-less-than-equals-grapes.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/grapes-open-curly-close-grapes.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/grapes-open-curly-close-grapes.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/index.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/LibraryM.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/LibraryM.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/poissontraindata.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/poissontraindata.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/print.CalibrationCurve.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/print.CalibrationCurve.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/print.GeneralizedCalibrationCurve.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/print.GeneralizedCalibrationCurve.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/print.ggplotCalibrationCurve.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/print.ggplotCalibrationCurve.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/traindata.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/print.SurvivalCalibrationCurve.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/val.prob.ci.2.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/survivaltraindata.html</loc>
   </url>
   <url>
-    <loc>https://bavodc.github.io/CalibrationCurves/reference/valProbggplot.html</loc>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/traindata.html</loc>
+  </url>
+  <url>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/val.prob.ci.2.html</loc>
+  </url>
+  <url>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/valProbggplot.html</loc>
+  </url>
+  <url>
+    <loc>https://bavodc.github.io/websiteCalibrationCurves/reference/valProbSurvival.html</loc>
   </url>
 </urlset>
