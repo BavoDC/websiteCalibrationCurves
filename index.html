@@ -66,11 +66,11 @@
 <h3 id="on-current-r--300">On current R (&gt;= 3.0.0)<a class="anchor" aria-label="anchor" href="#on-current-r--300"></a>
 </h3>
 <ul>
-<li>Development version from Github:</li>
+<li>You can install the latest development version from Github using the code below</li>
 </ul>
 <pre><code><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://devtools.r-lib.org/" class="external-link">"devtools"</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"BavoDC/CalibrationCurves"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
-<p>(This requires <code>devtools</code> &gt;= 1.6.1, and installs the “master” (development) branch.) This approach builds the package from source, i.e. <code>make</code> and compilers must be installed on your system – see the R FAQ for your operating system; you may also need to install dependencies manually.</p>
+<span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"BavoDC/CalibrationCurves"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span>, build_vignettes <span class="op">=</span> <span class="cn">TRUE</span>, ref <span class="op">=</span> <span class="st">"master"</span><span class="op">)</span></span></code></pre>
+<p>This requires <code>devtools</code> &gt;= 1.6.1, and installs the “master” branch. This approach builds the package from source, i.e. <code>make</code> and compilers must be installed on your system – see the R FAQ for your operating system.</p>
 </div>
 </div>
 <div class="section level2">
