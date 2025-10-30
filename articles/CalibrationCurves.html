@@ -5,63 +5,55 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="CalibrationCurves">
 <title>Introduction to the CalibrationCurves package • CalibrationCurves</title>
-<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- katex math --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><script src="../katex-auto.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to the CalibrationCurves package">
-<meta property="og:description" content="CalibrationCurves">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to the CalibrationCurves package">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
-    
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light" data-bs-theme="light"><div class="container">
-    
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+
     <a class="navbar-brand me-2" href="../index.html">CalibrationCurves</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.0.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">3.0.0</small>
 
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="active nav-item">
-  <a class="nav-link" href="../articles/CalibrationCurves.html">Get started</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
+<li class="active nav-item"><a class="nav-link" href="../articles/CalibrationCurves.html">Get started</a></li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav"></ul>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+      </ul>
 </div>
 
-    
+
   </div>
 </nav><div class="container template-article">
 
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-      <img src="" class="logo" alt=""><h1>Introduction to the CalibrationCurves package</h1>
+
+      <h1>Introduction to the CalibrationCurves package</h1>
                         <h4 data-toc-skip class="author">Bavo De Cock Campo</h4>
             
-            <h4 data-toc-skip class="date">2025-09-10</h4>
+            <h4 data-toc-skip class="date">2025-10-30</h4>
       
-      
+
       <div class="d-none name"><code>CalibrationCurves.Rmd</code></div>
     </div>
 
@@ -215,17 +207,18 @@ where we enter <span class="math inline">\(\text{logit}({}_{*} \widehat{\pi}_i)\
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bavodc.github.io/websiteCalibrationCurves/" class="external-link">CalibrationCurves</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: rms</span></span>
 <span><span class="co">#&gt; Loading required package: Hmisc</span></span>
-<span><span class="co">#&gt; Warning: package 'Hmisc' was built under R version 4.4.2</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Attaching package: 'Hmisc'</span></span>
 <span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     format.pval, units</span></span>
-<span><span class="co">#&gt; Loading required package: ggplot2</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"traindata"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; Loading required package: ggplot2</span></span>
+<span><span class="co">#&gt; Registered S3 method overwritten by 'broom':</span></span>
+<span><span class="co">#&gt;   method        from          </span></span>
+<span><span class="co">#&gt;   nobs.multinom riskRegression</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"traindata"</span><span class="op">)</span></span></code></pre></div>
 <p>In this data frame, we have four covariates and one response variable <code>y</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   y          x1         x2         x3         x4</span></span>
 <span><span class="co">#&gt; 1 0 -0.19981624  0.2982990  1.0277486 -0.1146414</span></span>
@@ -235,7 +228,7 @@ where we enter <span class="math inline">\(\text{logit}({}_{*} \widehat{\pi}_i)\
 <span><span class="co">#&gt; 5 1  1.39659613  1.1325081  0.6053029 -1.0598506</span></span>
 <span><span class="co">#&gt; 6 0 -0.04645095 -0.8167364  1.0196761 -0.4867560</span></span></code></pre></div>
 <p>Next, we fit a logistic regression model to obtain the estimated parameter vector <span class="math inline">\(\widehat{\beta}\)</span>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">glmFit</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">.</span> , data <span class="op">=</span> <span class="va">traindata</span>, family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glmFit</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -265,19 +258,19 @@ where we enter <span class="math inline">\(\text{logit}({}_{*} \widehat{\pi}_i)\
 <span class="header-section-number">1.4.2</span> Assessing the calibration performance<a class="anchor" aria-label="anchor" href="#assessing-the-calibration-performance"></a>
 </h4>
 <p>Hereafter, we assess the calibration performance on the <code>testdata</code> set. Hereto, we first have to compute the predicted probabilities on this data set.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"testdata"</span><span class="op">)</span></span>
 <span><span class="va">pHat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">glmFit</span>, newdata <span class="op">=</span> <span class="va">testdata</span>, type <span class="op">=</span> <span class="st">"response"</span><span class="op">)</span></span></code></pre></div>
 <p>We then store the response in the <code>testdata</code> in a separate vector <code>yTest</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yTest</span> <span class="op">=</span> <span class="va">testdata</span><span class="op">$</span><span class="va">y</span></span></code></pre></div>
 <p>Now we have everything we need to assess the calibration performance of our prediction model. We can either use <code>val.prob.ci.2</code> or <code>valProbggplot</code> to visualize the calibration performance and to obtain the statistics. <code>val.prob.ci.2</code> makes the plot using <code>base</code> R and <code>valProbggplot</code> uses the <code>ggplot2</code> package.</p>
 <p>By default, the flexible calibration curve (based on a loess smoother) will be plotted.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">calPerf</span> <span class="op">=</span> <span class="fu"><a href="../reference/val.prob.ci.2.html">val.prob.ci.2</a></span><span class="op">(</span><span class="va">pHat</span>, <span class="va">yTest</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-6-1.png" width="100%">
 In addition to the plot, the function returns an object of the class <code>CalibrationCurve</code>.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">calPerf</span></span>
 <span><span class="co">#&gt; Call:</span></span>
 <span><span class="co">#&gt; val.prob.ci.2(p = pHat, y = yTest)</span></span>
@@ -291,7 +284,7 @@ In addition to the plot, the function returns an object of the class <code>Calib
 <span><span class="co">#&gt;        Slope         Emax Brier scaled         Eavg          ECI </span></span>
 <span><span class="co">#&gt;   0.82278297   0.08288689   0.28730517   0.04747448   0.32064056</span></span></code></pre></div>
 <p>This object contains the calculated statistics as well as the calculated coordinates of the calibration curve.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">calPerf</span><span class="op">)</span></span>
 <span><span class="co">#&gt; List of 7</span></span>
 <span><span class="co">#&gt;  $ call             : language val.prob.ci.2(p = pHat, y = yTest)</span></span>
@@ -314,7 +307,7 @@ In addition to the plot, the function returns an object of the class <code>Calib
 <span><span class="co">#&gt;   .. ..$ ymax: num [1:500] 0.177 0.177 0.177 0.179 0.179 ...</span></span>
 <span><span class="co">#&gt;  - attr(*, "class")= chr "CalibrationCurve"</span></span></code></pre></div>
 <p>The coordinates are stored in the <code>CalibrationCurves</code> slot and can be extracted as follows.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">flexCal</span> <span class="op">=</span> <span class="va">calPerf</span><span class="op">$</span><span class="va">CalibrationCurves</span><span class="op">$</span><span class="va">FlexibleCalibration</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">flexCal</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"Predicted probability"</span>, ylab <span class="op">=</span> <span class="st">"Observed proportion"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, xlim <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, ylim <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/polygon.html" class="external-link">polygon</a></span><span class="op">(</span></span>
@@ -328,11 +321,11 @@ In addition to the plot, the function returns an object of the class <code>Calib
 <span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-9-1.png" width="672"></p>
 <p>Alternatively, we can use restricted cubic splines to obtain the flexible calibration curve.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rcsFit</span> <span class="op">=</span> <span class="kw"><a href="https://rdrr.io/r/base/conditions.html" class="external-link">tryCatch</a></span><span class="op">(</span><span class="fu"><a href="../reference/val.prob.ci.2.html">val.prob.ci.2</a></span><span class="op">(</span><span class="va">pHat</span>, <span class="va">yTest</span>, smooth <span class="op">=</span> <span class="st">"rcs"</span><span class="op">)</span>,</span>
 <span>                  error <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/rcsFit-1.png" width="100%"></p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/logical.html" class="external-link">is.logical</a></span><span class="op">(</span><span class="va">rcsFit</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fl">1</span>, type <span class="op">=</span> <span class="st">"n"</span>, xlab <span class="op">=</span> <span class="st">""</span>, ylab <span class="op">=</span> <span class="st">""</span>, xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span><span class="op">)</span>, ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">5</span>, y <span class="op">=</span> <span class="fl">5</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"There was a problem estimating\n"</span>,</span>
@@ -352,20 +345,20 @@ In addition to the plot, the function returns an object of the class <code>Calib
 <span><span class="co">#&gt;        Slope         Emax Brier scaled </span></span>
 <span><span class="co">#&gt;   0.82278297   0.08288689   0.28730517</span></span></code></pre></div>
 <p>We obtain the logistic calibration curve using the following code.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="fu"><a href="../reference/val.prob.ci.2.html">val.prob.ci.2</a></span><span class="op">(</span><span class="va">pHat</span>, <span class="va">yTest</span>, logistic.cal <span class="op">=</span> <span class="cn">TRUE</span>, smooth <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-10-1.png" width="100%"></p>
 <p>We can plot both using</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="fu"><a href="../reference/val.prob.ci.2.html">val.prob.ci.2</a></span><span class="op">(</span><span class="va">pHat</span>, <span class="va">yTest</span>, logistic.cal <span class="op">=</span> <span class="cn">TRUE</span>, col.log <span class="op">=</span> <span class="st">"orange"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-11-1.png" width="100%"></p>
 <p>The package also allows to change the colors, change the position of the legend and much more. Check out the help-function to see what other arguments the functions have.</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="fu"><a href="../reference/val.prob.ci.2.html">val.prob.ci.2</a></span><span class="op">(</span><span class="va">pHat</span>, <span class="va">yTest</span>, col.ideal <span class="op">=</span> <span class="st">"black"</span>, col.smooth <span class="op">=</span> <span class="st">"red"</span>, CL.smooth <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>              legendloc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, statloc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.6</span>, <span class="fl">0.25</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-12-1.png" width="100%"></p>
 <p>Finally, we can also decide which statistics appear on the plot.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/invisible.html" class="external-link">invisible</a></span><span class="op">(</span><span class="fu"><a href="../reference/val.prob.ci.2.html">val.prob.ci.2</a></span><span class="op">(</span><span class="va">pHat</span>, <span class="va">yTest</span>, dostats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"C (ROC)"</span>, <span class="st">"Intercept"</span>, <span class="st">"Slope"</span>, <span class="st">"ECI"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-13-1.png" width="100%"></p>
 </div>
@@ -374,7 +367,7 @@ In addition to the plot, the function returns an object of the class <code>Calib
 <span class="header-section-number">1.4.3</span> ggplot version<a class="anchor" aria-label="anchor" href="#ggplot-version"></a>
 </h4>
 <p>The ggplot version (i.e.<code>valProbggplot</code>) uses virtually the same arguments. Hence, we can easily obtain a ggplot using the same code.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/valProbggplot.html">valProbggplot</a></span><span class="op">(</span><span class="va">pHat</span>, <span class="va">yTest</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-14-1.png" width="100%"></p>
 <pre><code><span><span class="co">#&gt; Call:</span></span>
@@ -430,7 +423,7 @@ H_i(t) = H_0(t) \exp( \eta_i)
 where <span class="math inline">\(\zeta\)</span> is the calibration slope that quantifies the relationship between the predicted and observed hazards. Similarly to <a href="#eq:logcal">(1.1)</a>, <span class="math inline">\(\zeta\)</span> indicates whether the model is over- (<span class="math inline">\(\zeta &lt; 1\)</span>) or underfitted (<span class="math inline">\(\zeta &gt;1\)</span>). Note that we do not have a calibration intercept in this model. This is because the baseline hazard function <span class="math inline">\(h_0(t)\)</span> is not estimated in the Cox model, and the model is only identified up to a proportionality constant. As a result, any intercept term would be absorbed into the baseline hazard function, and would not be separately identifiable.</p>
 <p>We do not explicitly specify the time point <span class="math inline">\(t\)</span>, as calibration can be assessed either across all follow-up time points or at a specific time point of interest. To estimate this model, we can fit a Cox proportional hazards model.</p>
 <p>Below is a short example illustrating how you can assess the calibration performance of a Cox proportional hazards model using the package. Here, we first fit the model using <code>coxph</code> from the <code>survival</code> package. to assess the calibration performance, we pass the object containing the model fit along with the external validation data set to the <code>valProbSurvival</code> function.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">trainDataSurvival</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">testDataSurvival</span><span class="op">)</span></span>
@@ -439,7 +432,7 @@ where <span class="math inline">\(\zeta\)</span> is the calibration slope that q
 <span><span class="va">calPerf</span> <span class="op">=</span> <span class="fu"><a href="../reference/valProbSurvival.html">valProbSurvival</a></span><span class="op">(</span><span class="va">sFit</span>, <span class="va">testDataSurvival</span>, plotCal <span class="op">=</span> <span class="st">"ggplot"</span>, nk <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></code></pre></div>
 <p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-15-1.png" width="672"></p>
 <p>Next to the plot, you also get a range of statistics that assess the calibration performance.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">calPerf</span></span>
 <span><span class="co">#&gt; Call:</span></span>
 <span><span class="co">#&gt; valProbSurvival(fit = sFit, valdata = testDataSurvival, nk = 5, </span></span>
@@ -488,8 +481,358 @@ where <span class="math inline">\(\zeta\)</span> is the calibration slope that q
 </div>
 </div>
 <div class="section level2" number="3">
+<h2 id="assessing-the-calibration-of-prediction-models-in-clustered-datasets">
+<span class="header-section-number">3</span> Assessing the calibration of prediction models in clustered datasets<a class="anchor" aria-label="anchor" href="#assessing-the-calibration-of-prediction-models-in-clustered-datasets"></a>
+</h2>
+<p>In certain scenarios, we have hierarchically structured data. Here, we have heterogeneity between clusters and dependency among observations belonging to the same cluster. It is of utmost importance that this hierarchical structure is taken into account when assessing the calibration of a predictive model. A prime example of this hierarchical structure is when patients (level 1) are nested within hospitals (level 2). In these cases, the observations within the same cluster may be more similar to each other than to those belonging to different clusters.</p>
+<p>We assume that the validation data set has a total of <span class="math inline">\(J\)</span> clusters and use <span class="math inline">\(j = (1, \dots, J)\)</span> to index the clusters. In each cluster, we have <span class="math inline">\(n_j\)</span> patients and we index the patients using <span class="math inline">\(i = (1, \dots, n_j)\)</span>. The total sample size is <span class="math inline">\(N = \sum_{j = 1}^J n_j\)</span>. We use <span class="math inline">\(y_{ij} \in (0,1)\)</span> to denote the outcome of patient <span class="math inline">\(i\)</span> in cluster <span class="math inline">\(j\)</span>, which takes on the value 0 in case of a non-event and 1 in case of an event. We assume that <span class="math inline">\(y_{ij}\)</span> follows a Bernouilli distribution <span class="math inline">\(y_{ij} \sim \text{Bern}(\pi_{ij})\)</span>, where <span class="math inline">\(\pi_{ij}\)</span> denotes the probability of experiencing the event. Similar to before, we express <span class="math inline">\(\pi_{ij}\)</span> as a function of a set of risk characteristics</p>
+<p><span class="math display">\[
+P(y_{ij} = 1 | \boldsymbol{x}_{ij}) = \pi(\boldsymbol{x}_{ij}).
+\]</span></p>
+<p>In a simple logistic regression model, we have that
+<span class="math display">\[
+\pi(\boldsymbol{x}_{ij}) = \frac{1}{1 + e^{-\boldsymbol{x}_{ij}^\top \boldsymbol{\beta}}}.
+\]</span></p>
+<p>We have a perfectly calibrated model when <span class="math inline">\(P(y_{ij} = 1 | \pi(\boldsymbol{x}_{ij})) = \pi(\boldsymbol{x}_{ij})\)</span> for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. To estimate the calibration, we could extend <a href="#eq:logcal">(1.1)</a> to</p>
+<p><span class="math display">\[
+  \text{logit}(P({}_{*} y_{ij} = 1| {}_{*} \widehat{\pi}_{ij})) = \alpha + \zeta \ \text{logit}({}_{*} \widehat{\pi}_{ij}).
+\]</span></p>
+<p>However, with this approach, we ignore the clustering and do not obtain any information on the performance in the different clusters. Since there is no commonly accepted way to estimate the calibration curves in this scenario, <span class="citation">Barreñada et al. (2025)</span> propose three approaches to obtain calibration curves:</p>
+<ol style="list-style-type: decimal">
+<li>
+<a href="#CGC">Clustered Group Calibration (CG-C)</a>: a bivariate random effects meta-analysis model;</li>
+<li>
+<a href="#id_2MAC">Two-stage Neta-Analysis Calibration (2MA-C)</a>: a two-stage univariate random effect meta-analytical approach;</li>
+<li>
+<a href="#MIXC">Mixed model Calibration (MIX-C)</a>: a one-step approach using a random-effects model.</li>
+</ol>
+<p>All three approaches are implemented in this <code>CalibrationCurves</code> package and you can access them through the <code>valProbCluster</code> function. To illustrate the methods, we use a clustered training and validation data set.</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/" class="external-link">lme4</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: Matrix</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"clustertraindata"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"clustertestdata"</span><span class="op">)</span></span>
+<span><span class="va">mFit</span>           <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html" class="external-link">glmer</a></span><span class="op">(</span><span class="va">y</span> <span class="op">~</span> <span class="va">x1</span> <span class="op">+</span> <span class="va">x2</span> <span class="op">+</span> <span class="va">x3</span> <span class="op">+</span> <span class="va">x5</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">cluster</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">clustertraindata</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
+<span><span class="va">preds</span>          <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">mFit</span>, <span class="va">clustertestdata</span>, type <span class="op">=</span> <span class="st">"response"</span>, re.form <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span></span>
+<span><span class="va">y</span>              <span class="op">=</span> <span class="va">clustertestdata</span><span class="op">$</span><span class="va">y</span></span>
+<span><span class="va">cluster</span>        <span class="op">=</span> <span class="va">clustertestdata</span><span class="op">$</span><span class="va">cluster</span></span>
+<span><span class="va">valClusterData</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">y</span>, preds <span class="op">=</span> <span class="va">preds</span>, center <span class="op">=</span> <span class="va">cluster</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3" number="3.1">
+<h3 id="CGC">
+<span class="header-section-number">3.1</span> Clustered Group Calibration (CG-C)<a class="anchor" aria-label="anchor" href="#CGC"></a>
+</h3>
+<p>The CG-C method is an extension of the traditional grouped calibration method (binning calibration) to data sets with a clustered structure. In the traditional grouped calibration:</p>
+<ul>
+<li>all data is pooled;</li>
+<li>observations are divided into equal-sized groups based on the predicted risks;</li>
+<li>for each group, the observed event rate is plotted against the mean predicted risk.</li>
+</ul>
+<p>Conversely, in CG-C:</p>
+<ul>
+<li>grouping is performed within each cluster first;</li>
+<li>cluster-level results are combined across clusters via a bivariate random-effects meta-analysis, capturing between-cluster heterogeneity and within-cluster sampling error.</li>
+</ul>
+<p>In the package, two grouping strategies are available:</p>
+<ul>
+<li>
+<code>"grouped"</code>: equal-sized quantile groups within each cluster;</li>
+<li>
+<code>"interval"</code>: fixed-width intervals in (0, 1) within each cluster.</li>
+</ul>
+<div class="section level4" number="3.1.1">
+<h4 id="mathematical-details">
+<span class="header-section-number">3.1.1</span> Mathematical details<a class="anchor" aria-label="anchor" href="#mathematical-details"></a>
+</h4>
+<p>The CG-C method proceeds as follows:</p>
+<ol style="list-style-type: decimal">
+<li>Per cluster <span class="math inline">\(j\)</span>, we split the predicted probabilities into <span class="math inline">\(Q\)</span> groups;</li>
+<li>Within each group <span class="math inline">\(q\)</span> and for each cluster <span class="math inline">\(j\)</span>, we compute the mean observed outcome (<span class="math inline">\(\hat{y}_{qj}\)</span>) and mean predicted probability (<span class="math inline">\(\hat{\bar{\pi}}_{qj}\)</span>).</li>
+<li>Per group <span class="math inline">\(q\)</span>, we perform a bivariate random-effects meta-analysis. We include <span class="math inline">\(\text{logit}(\hat{y}_{qj})\)</span> and <span class="math inline">\(\text{logit}(\hat{\bar{\pi}}_{qj})\)</span> as the response variables and we capture the cluster-specific deviation by including a random intercept. When fitting the model, we use an unstructured variance–covariance matrix.</li>
+</ol>
+<p>The equation of this model is given by
+<span class="math display">\[
+\begin{bmatrix}
+\text{logit}(\bar{y}_{qj}) \\
+\text{logit}(\hat{\bar{\pi}}_{qj})
+\end{bmatrix}
+=
+\begin{bmatrix}
+{}_{\bar{y}} \mu_q + u_{qj} + \varepsilon_{qj} \\
+{}_{\hat{\bar{\pi}}} \mu_q + \nu_{qj} + \epsilon_{qj}
+\end{bmatrix}
+\tag{2}
+\]</span></p>
+<p>Where <span class="math inline">\(\bar{y}_{qj}\)</span> denotes the prevalence of cluster <span class="math inline">\(j\)</span> within quantile <span class="math inline">\(q\)</span>, and <span class="math inline">\(\hat{\bar{\pi}}_{qj}\)</span> the average estimated risk in cluster <span class="math inline">\(j\)</span> within quantile <span class="math inline">\(q\)</span>. We use the subscript <span class="math inline">\(q\)</span> in the quantities to indicate that this refers to quantile <span class="math inline">\(q\)</span>. <span class="math inline">\(u_{qj}\)</span> and <span class="math inline">\(\nu_{qj}\)</span> represent the random intercepts for cluster <span class="math inline">\(j\)</span>, capturing the between-cluster heterogeneity, whereas <span class="math inline">\(\varepsilon_{qj}\)</span> and <span class="math inline">\(\epsilon_{qj}\)</span> account for the within-cluster error. In this model, we assume that <span class="math inline">\({}_{\bar{y}} \mu_q + u_{qj}\)</span> and <span class="math inline">\({}_{\hat{\bar{\pi}}} \mu_q + \nu_{qj}\)</span> are randomly drawn from a distribution with mean (or pooled) <span class="math inline">\({}_{\bar{y}} \mu_q\)</span> and <span class="math inline">\({}_{\hat{\bar{\pi}}} \mu_q\)</span>, respectively.</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+u_{qj} \\
+\nu_{qj}
+\end{bmatrix}
+\sim \mathcal{N}
+\left(
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix},
+\Omega_q
+\right)
+\quad \text{and} \quad
+\begin{bmatrix}
+\varepsilon_{qj} \\
+\epsilon_{qj}
+\end{bmatrix}
+\sim \mathcal{N}
+\left(
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix},
+\Sigma_{qj}
+\right)
+\]</span></p>
+<p>Where <span class="math inline">\(\Omega_q\)</span> and <span class="math inline">\(\Sigma_{qj}\)</span> represent the between-cluster and within-cluster covariance matrices within quantile <span class="math inline">\(q\)</span>, respectively.</p>
+<p><span class="math display">\[
+\Omega_q =
+\begin{bmatrix}
+{}_{\bar{y}} \tau_q^2 &amp; {}_{b} \rho_q \ \ \ {}_{\bar{y}} \tau_q^2 \ \ {}_{\bar{\hat{\pi}}} \tau_q^2 \\
+{}_{b} \rho_q \ \ \ {}_{\bar{y}} \tau_q^2 \ \ {}_{\bar{\hat{\pi}}} \tau_q^2 &amp; {}_{\bar{\hat{\pi}}} \tau_q^2
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\Sigma_{qj} =
+\begin{bmatrix}
+{}_{\bar{y}} \sigma_{qj}^2 &amp; {}_{w} \rho_q \ \ {}_{\bar{y}} \sigma_{qj}^2 \ \ {}_{\bar{\hat{\pi}}} \sigma_{qj}^2 \\
+{}_{w} \rho_q \ \ {}_{\bar{y}} \sigma_{qj}^2 \ \ {}_{\bar{\hat{\pi}}} \sigma_{qj}^2 &amp; {}_{\bar{\hat{\pi}}} \sigma_{qj}^2
+\end{bmatrix}
+\]</span></p>
+<p>We use <span class="math inline">\({}_{\bar{y}} \sigma_{qj}^2\)</span> and <span class="math inline">\({}_{\bar{\hat{\pi}}} \sigma_{qj}^2\)</span> to denote the variance of <span class="math inline">\(\bar{y}_{qj}\)</span> and <span class="math inline">\(\hat{\bar{\pi}}_{qj}\)</span>, respectively. <span class="math inline">\({}_{w} \rho_q\)</span> represents the within-cluster correlation and <span class="math inline">\({}_{b} \rho_q\)</span> the between-cluster correlation in quantile <span class="math inline">\(q\)</span>. The between-study variance is denoted as <span class="math inline">\({}_{\bar{\hat{\pi}}} \tau_q^2\)</span> and <span class="math inline">\({}_{\bar{\hat{\pi}}} \tau_q^2\)</span>.</p>
+<p>For each quantile <span class="math inline">\(q\)</span>, we use a bivariate meta-analysis model to account for the strong dependence between the average estimated risk and observed proportion. The calibration plot is then created by plotting the <span class="math inline">\(Q\)</span> values of <span class="math inline">\({}_{\bar{\hat{\pi}}} \mu_q\)</span> on the x-axis and <span class="math inline">\({}_{\bar{y}} \mu_q\)</span> on the y-axis.</p>
+</div>
+<div class="section level4" number="3.1.2">
+<h4 id="illustration">
+<span class="header-section-number">3.1.2</span> Illustration<a class="anchor" aria-label="anchor" href="#illustration"></a>
+</h4>
+<p>The following code gives an example of the CG-C (Grouped).</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">res_cgcg</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/valProbCluster.html">valProbCluster</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">valClusterData</span>,</span>
+<span>  p <span class="op">=</span> <span class="va">preds</span>, y <span class="op">=</span> <span class="va">y</span>, cluster <span class="op">=</span> <span class="va">center</span>,</span>
+<span>  approach <span class="op">=</span> <span class="st">"CGC"</span>, method <span class="op">=</span> <span class="st">"grouped"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">res_cgcg</span></span></code></pre></div>
+<p><img src="CalibrationCurves_files/figure-html/CGC-1.png" width="672"></p>
+<pre><code><span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; valProbCluster(data = valClusterData, p = preds, y = y, cluster = center, </span></span>
+<span><span class="co">#&gt;     approach = "CGC", method = "grouped")</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A 95% confidence interval is used.</span></span></code></pre>
+<p>You can employ the CG-C (Interval) using the following code. This follows the same steps as the Grouped method, except for Step 1 where it uses equally spaced probability intervals instead of quantiles.</p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">res_cgci</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/valProbCluster.html">valProbCluster</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">valClusterData</span>,</span>
+<span>  p <span class="op">=</span> <span class="va">preds</span>, y <span class="op">=</span> <span class="va">y</span>, cluster <span class="op">=</span> <span class="va">center</span>,</span>
+<span>  approach <span class="op">=</span> <span class="st">"CGC"</span>, method <span class="op">=</span> <span class="st">"interval"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt; Warning in (function (data = NULL, p, y, cluster, cl.level = 0.95, ntiles = 10,</span></span>
+<span><span class="co">#&gt; : There is a group with less than 50 observations. Consider decreasing the</span></span>
+<span><span class="co">#&gt; number of groups.</span></span>
+<span><span class="va">res_cgci</span></span></code></pre></div>
+<p><img src="CalibrationCurves_files/figure-html/CGCinterval-1.png" width="672"></p>
+<pre><code><span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; valProbCluster(data = valClusterData, p = preds, y = y, cluster = center, </span></span>
+<span><span class="co">#&gt;     approach = "CGC", method = "interval")</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A 95% confidence interval is used.</span></span></code></pre>
+<p>We interpret the plot as follows:</p>
+<ul>
+<li>
+<strong>Black</strong>: Traditional grouped calibration curve (pooled data)</li>
+<li>
+<strong>Gold</strong>: CG-C pooled curve across clusters</li>
+<li>
+<strong>Shaded areas</strong>:
+<ul>
+<li>Light blue = 95% Prediction Interval (expected calibration curve in new clusters)</li>
+<li>Cornflower blue = 95% Confidence Interval (expected calibration of the pooled curve)</li>
+</ul>
+</li>
+</ul>
+<p>CG-C provides calibration estimates that account for cluster-level variability, making it more representative of model performance in new or unseen clusters.</p>
+</div>
+</div>
+<div class="section level3" number="3.2">
+<h3 id="id_2MAC">
+<span class="header-section-number">3.2</span> Two stage meta-analysis calibration (2MA-C)<a class="anchor" aria-label="anchor" href="#id_2MAC"></a>
+</h3>
+<p>For the second approach, we use a two-stage random effects meta-analysis to estimate the calibration plot. First, we fit a flexible curve per cluster with a smoother of choice. Currently, the user can choose between restricted cubic splines and LOESS. When employing restricted cubic splines, the number of knots per cluster is selected by performing a likelihood ratio test between all combinations of models with 3, 4, and 5 knots, selecting the model with the least knots that provides the best fit. When you opt for LOESS, the span parameter with the lowest bias-corrected AIC is selected in each cluster.</p>
+<div class="section level4" number="3.2.1">
+<h4 id="mathematical-details-1">
+<span class="header-section-number">3.2.1</span> Mathematical details<a class="anchor" aria-label="anchor" href="#mathematical-details-1"></a>
+</h4>
+<p>We train a flexible curve per cluster and estimate the observed proportion for a fixed grid of estimated risks from 0.01 to 0.99 (<span class="math inline">\(G\)</span>, default is 100 points). Hereafter, we use a random effects meta-analysis model per point in the grid to combine the logit-transformed predictions across clusters, fitting the following univariate model per point <span class="math inline">\(g\)</span> in the grid:</p>
+<p><span class="math display">\[
+\text{logit}({}_{s} \hat{\pi}_{gj}) = {}_{\hat{\pi}} \mu_g + \nu_{gj} + \epsilon_{gj}
+\]</span></p>
+<p><span class="math inline">\({}_{s} \hat{\pi}_{gj}\)</span> denotes the predicted proportion of point <span class="math inline">\(g\)</span> for cluster <span class="math inline">\(j\)</span>, <span class="math inline">\({}_{\hat{\pi}} \mu_g\)</span> the overall mean for point <span class="math inline">\(g\)</span>, <span class="math inline">\(\nu_{gj}\)</span> the cluster-specific deviation, and <span class="math inline">\(\epsilon_{gj}\)</span> the error.</p>
+<p>We assume that <span class="math inline">\(\nu_{gj} \sim \mathcal{N}(0, {}_{\hat{\pi}} \tau_g^2)\)</span> and <span class="math inline">\(\epsilon_{gj} \sim \mathcal{N}(0, {}_{\hat{\pi}} \sigma_{gj}^2)\)</span>. Further, we include the inverse of the variance of <span class="math inline">\(\text{logit}({}_{s} \hat{\pi}_{gj})\)</span> as weight and hereby take both the cluster-specific (<span class="math inline">\({}_{\hat{\pi}} \sigma_{gj}^2\)</span>) and between-cluster variability (<span class="math inline">\({}_{\hat{\pi}} \tau_g^2\)</span>) into account.</p>
+<!-- ### Method Overview -->
+<!-- **Stage 1** -->
+<!-- Fit a model per center and estimate observed proportion for a grid of values (e.g., 100 values from 0.001 to 0.999): -->
+<!-- $$ \text{logit}(y_{ji}) = \alpha_j + \beta_j \cdot \eta_{ji}$$ -->
+<!-- --- -->
+<!-- **Stage 2** -->
+<!-- Pool observed proportion per grid value $g$ using a random effects model: -->
+<!-- $$ -->
+<!-- \hat{y}_{gj} = y_g + u_{gj} + \epsilon_{gj}, \quad \epsilon_j \sim N(0, \sigma_{gj}^2), \quad u_j \sim N(0, \tau_g^2) -->
+<!-- $$ -->
+<!-- Where: -->
+<!-- $\hat{y}_{gj}$ is the estimated observed proportion from model $j$ for value $g$ in the grid. -->
+<!-- $u_j$ is the random effect for center $k$. -->
+<!-- $\(\epsilon_j\)$ is the sampling error or within-study variance. -->
+<!-- Here: -->
+<!-- $\tau_g^2$ is the between-study variability or heterogeneity, estimated using REML. -->
+<!-- $s_j^2$ is the within-study variability. -->
+<!-- Confidence intervals can be calculated using: -->
+<!--  **Default Method**: $\hat{y}_g \pm z_{1 - \alpha/2} \cdot SE(\hat{y}_g)$ -->
+<!--  **HKSJ Method**: $\hat{y}_g \pm t_{(J-2)} \sqrt{\frac{\sum w_j (\hat{y}_{gj} - \hat{y}_g)^2}{N-1} + SE(\hat{y}_g)^2}$ (recommended for a small number of studies) -->
+<!-- Where: $SE(\hat{y}_g) = \sqrt{\frac{s^2}{n_{gj}} + \frac{\tau_{gj}^2}{N}}$ -->
+<!-- Prediction intervals are based on the \(t\)-distribution, as explained in Higgins et al (2009): $\hat{y}_g \pm t_{(J-2)} \sqrt{\tau^2 + SE(\hat{y}_g)^2}$ -->
+<!-- Other supported methods for prediction intervals include: -->
+<!--  **Hartung-Knapp**,  -->
+<!--  **Kenward-Roger**, -->
+<!--  **Bootstrap Approach**, or  -->
+<!--  **Standard Normal Quantile**. -->
+<!-- Detailed methodological overview can be found in the published [article](https://doi.org/10.48550/arXiv.2503.08389). -->
+</div>
+<div class="section level4" number="3.2.2">
+<h4 id="illustration-1">
+<span class="header-section-number">3.2.2</span> Illustration<a class="anchor" aria-label="anchor" href="#illustration-1"></a>
+</h4>
+<p>The code below shows how to estimate the calibration curves using the MAC2 method, using splines and LOESS in the first step.</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">res_mac2_spl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/valProbCluster.html">valProbCluster</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">valClusterData</span>,</span>
+<span>  p <span class="op">=</span> <span class="va">preds</span>, y <span class="op">=</span> <span class="va">y</span>, cluster <span class="op">=</span> <span class="va">center</span>,</span>
+<span>  approach <span class="op">=</span> <span class="st">"MAC2"</span>, knots <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>  method_choice <span class="op">=</span> <span class="st">"splines"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">res_mac2_spl</span></span></code></pre></div>
+<p><img src="CalibrationCurves_files/figure-html/MAC2-1.png" width="672"></p>
+<pre><code><span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; valProbCluster(data = valClusterData, p = preds, y = y, cluster = center, </span></span>
+<span><span class="co">#&gt;     approach = "MAC2", knots = 3, method_choice = "splines")</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A 95% confidence interval is used.</span></span>
+<span><span class="va">res_mac2_loess</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/valProbCluster.html">valProbCluster</a></span><span class="op">(</span></span>
+<span>  data <span class="op">=</span> <span class="va">valClusterData</span>,</span>
+<span>  p <span class="op">=</span> <span class="va">preds</span>, y <span class="op">=</span> <span class="va">y</span>, cluster <span class="op">=</span> <span class="va">center</span>,</span>
+<span>  grid_l <span class="op">=</span> <span class="fl">20</span>,</span>
+<span>  approach <span class="op">=</span> <span class="st">"MAC2"</span>,</span>
+<span>  method_choice <span class="op">=</span> <span class="st">"loess"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">res_mac2_loess</span></span></code></pre>
+<p><img src="CalibrationCurves_files/figure-html/MAC2-2.png" width="672"></p>
+<pre><code><span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; valProbCluster(data = valClusterData, p = preds, y = y, cluster = center, </span></span>
+<span><span class="co">#&gt;     approach = "MAC2", grid_l = 20, method_choice = "loess")</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A 95% confidence interval is used.</span></span></code></pre>
+<p>We interpret the plot as follows:</p>
+<ul>
+<li>
+<strong>Black (dashed)</strong>: 2MA-C pooled curve across clusters</li>
+<li>
+<strong>Black (solid)</strong>: Center specific curves (if <code>center_curves = TRUE</code>)</li>
+<li>
+<strong>Red shaded areas</strong>:
+<ul>
+<li>Light red = 95% Prediction Interval (expected calibration curve in new clusters)</li>
+<li>Dark red = 95% Confidence Interval (expected calibration of the pooled curve)</li>
+</ul>
+</li>
+</ul>
+<p>The 2MA-C method provides calibration estimates that account for cluster-level variability, making it more representative of model performance in new or unseen clusters and at the same time calculate center specific calibration curves. Note that in this example the clustering is based on normally distributed random effect, which might not be the case in real life scenarios. Due to this, the splines model seems to fit better than the loess model. However if the random effects follows a more complex structure, the loess model might be more appropriate.</p>
+</div>
+</div>
+<div class="section level3" number="3.3">
+<h3 id="MIXC">
+<span class="header-section-number">3.3</span> Mixed model calibration (MIX-C)<a class="anchor" aria-label="anchor" href="#MIXC"></a>
+</h3>
+<p>In the third approach, we employ a one-stage logistic generalized linear mixed model (GLMM) to model the outcome as a function of the logit-transformed predictions. To allow for a non-linear effect, we employ restricted cubic splines with three knots for both the fixed and random effects</p>
+<p><span class="math display">\[
+\text{logit}\left(P(y_{ij} = 1 \mid \widehat{\pi}(\boldsymbol{x}_{ij}), \widetilde{s}_j)\right) = s\left(\text{logit}\left(\widehat{\pi}(\boldsymbol{x}_{ij})\right)\right) + \tilde{s}_j \left(\text{logit}\left(\widehat{\pi}(\boldsymbol{x}_{ij})\right)\right).
+\]</span></p>
+<p>Here, <span class="math inline">\(s\)</span> denotes a smooth effect and <span class="math inline">\(\tilde{s}_j\)</span> denotes the smooth random effect for cluster <span class="math inline">\(j\)</span>. The model is fit using the package, and splines are added with the package. This approach estimates the calibration per cluster and the variance of the random effects in a single step.</p>
+<div class="section level4" number="3.3.1">
+<h4 id="mathematical-details-2">
+<span class="header-section-number">3.3.1</span> Mathematical details<a class="anchor" aria-label="anchor" href="#mathematical-details-2"></a>
+</h4>
+<!-- In this approach, we estimate the observed proportion as -->
+<!-- $$ -->
+<!-- \hat{p}^{(o)}_{ij} = \text{logit}^{-1} \left[ \hat{s}\left( \text{logit}(\hat{\pi}(x_{ij})) \right) + \tilde{s}_j \, \hat{\left( \text{logit}(\hat{\pi}(x_{ij})) \right)} \right] -->
+<!-- $$ -->
+<!-- where $\hat{s}$ and $\tilde{s}_j$ denote the estimated smooth effects.   -->
+<!-- We take the variance of both the fixed and random components into account when calculating the variance of the linear predictor, and we approximate the standard error of $\hat{p}^{(o)}_{ij}$ using the delta method. -->
+<!-- To keep the confidence interval within $[0, 1]$, we construct the interval as: -->
+<!-- $$ -->
+<!-- \min \left( 1, \max\left( 0, \hat{p}^{(o)}_{ij} \mp z_{1-\alpha/2} \, \text{se}\left( \hat{p}^{(o)}_{ij} \right) \right) \right) -->
+<!-- $$ -->
+<!-- where $z_{1-\alpha/2}$ denotes the quantile of the standard normal distribution that corresponds to the cumulative probability of $1 - \alpha/2$ (i.e., $1.96$ for a 95% CI). -->
+<p>The prediction intervals are calculated using the <code>predictInterval</code> function in <strong>R</strong> with 10,000 samples (simulation-based). This function takes the following into account:</p>
+<ul>
+<li>the uncertainty at the observation level (residual variance);</li>
+<li>the fixed coefficients;</li>
+<li>the random effects.</li>
+</ul>
+<p>In this method:</p>
+<ol style="list-style-type: decimal">
+<li>We first obtain the random and fixed effects.</li>
+<li>We generate <span class="math inline">\(n\)</span> samples (default = 10,000) based on a multivariate normal distribution of the random and fixed effects, separately.</li>
+<li>We calculate the linear predictor in each sample.</li>
+<li>We predict the upper and lower limits of the prediction interval.</li>
+</ol>
+<p>Detailed methodological overview can be found in the published <a href="https://doi.org/10.48550/arXiv.2503.08389" class="external-link">article</a>.</p>
+</div>
+<div class="section level4" number="3.3.2">
+<h4 id="illustration-2">
+<span class="header-section-number">3.3.2</span> Illustration<a class="anchor" aria-label="anchor" href="#illustration-2"></a>
+</h4>
+<p>Using the code as shown below, we can estimate the calibration curve using the MIX-C method.</p>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">res_mixc_slo</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/valProbCluster.html">valProbCluster</a></span><span class="op">(</span></span>
+<span>  p <span class="op">=</span> <span class="va">valClusterData</span><span class="op">$</span><span class="va">preds</span>, y <span class="op">=</span> <span class="va">valClusterData</span><span class="op">$</span><span class="va">y</span>, cluster <span class="op">=</span> <span class="va">valClusterData</span><span class="op">$</span><span class="va">center</span>,</span>
+<span>  pl <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  approach <span class="op">=</span> <span class="st">"MIXC"</span>, method <span class="op">=</span> <span class="st">"slope"</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">res_mixc_slo</span></span></code></pre></div>
+<p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-17-1.png" width="672"></p>
+<pre><code><span><span class="co">#&gt; Call:</span></span>
+<span><span class="co">#&gt; valProbCluster(p = valClusterData$preds, y = valClusterData$y, </span></span>
+<span><span class="co">#&gt;     cluster = valClusterData$center, plot = TRUE, approach = "MIXC", </span></span>
+<span><span class="co">#&gt;     method = "slope")</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A 95% confidence interval is used.</span></span></code></pre>
+<p>We interpret the plot as follows:</p>
+<ul>
+<li>
+<strong>Black (dashed)</strong>: MIX-C pooled curve across clusters</li>
+<li>
+<strong>Black (solid)</strong>: Center specific curves (if <code>center_curves = TRUE</code>)</li>
+<li>
+<strong>Green shaded areas</strong>:
+<ul>
+<li>Light green = 95% Prediction Interval (expected calibration curve in new clusters)</li>
+<li>Dark green = 95% Confidence Interval (expected calibration of the pooled curve it can be calculated with Delta method or normal approximation)</li>
+</ul>
+</li>
+</ul>
+<p>MIX-C is a mixed-effects logistic calibration model using restricted cubic splines with random intercepts and slopes per cluster, designed to account for both fixed and random effects in calibration. It performs especially well for cluster-specific calibration curves, particularly when sample sizes per cluster are small, due to its shrinkage properties. A limitation is that its prediction intervals can be inconsistently too narrow or too wide, and like other methods, it tends to underestimate between-cluster heterogeneity. Overall, MIX-C is recommended for producing cluster-specific calibration plots, while other methods may be preferred for average-effect curves.</p>
+</div>
+</div>
+</div>
+<div class="section level2" number="4">
 <h2 id="assessing-the-performance-of-other-types-of-prediction-models">
-<span class="header-section-number">3</span> Assessing the performance of other types of prediction models<a class="anchor" aria-label="anchor" href="#assessing-the-performance-of-other-types-of-prediction-models"></a>
+<span class="header-section-number">4</span> Assessing the performance of other types of prediction models<a class="anchor" aria-label="anchor" href="#assessing-the-performance-of-other-types-of-prediction-models"></a>
 </h2>
 <p>In my recent paper <span class="citation">(De Cock Campo 2023)</span>, I propose an extension of the logistic calibration framework to distributions that belong to the exponential family with probability density function (pdf)
 <span class="math display">\[\begin{align*}
@@ -499,46 +842,46 @@ where <span class="math inline">\(\zeta\)</span> is the calibration slope that q
 Here, <span class="math inline">\(\theta_i\)</span> is the natural parameter, <span class="math inline">\(\phi\)</span> the dispersion parameter and <span class="math inline">\(w_i\)</span> the weight. <span class="math inline">\(b(\cdot)\)</span> and <span class="math inline">\(c(\cdot)\)</span> are known functions. Similar to before, we assume that there is an unknown regression function <span class="math inline">\(r(\boldsymbol{x}_i) = E[y_i | \boldsymbol{x}_i]\)</span>. To approximate this unknown function, we rely on prediction models with the following functional form
 <span class="math display" id="eq:PredModel">\[\begin{align*}
     E[y_i | \boldsymbol{x}_i] = \mu_i = f(\boldsymbol{x}_i).
-    \tag{3.1}
+    \tag{4.1}
 \end{align*}\]</span></p>
 <p>
-To estimate <a href="#eq:PredModel">(3.1)</a>, we can use a generalized linear model
+To estimate <a href="#eq:PredModel">(4.1)</a>, we can use a generalized linear model
 <span class="math display" id="eq:GLM">\[\begin{align*}
         g(E[y_i | \boldsymbol{x}_i]) = \boldsymbol{x}_i^\top \boldsymbol{\beta} = \eta_i.
-        \tag{3.2}
+        \tag{4.2}
 \end{align*}\]</span>
-where <span class="math inline">\(g(\cdot)\)</span> denotes the link function. Alternatively, we can estimate <a href="#eq:PredModel">(3.1)</a> using machine learning methods. Using the model fit, we obtain the predictions <span class="math inline">\(\widehat{\mu}_i = \widehat{f}(\boldsymbol{x}_i)\)</span>.</p>
-<div class="section level3" number="3.1">
+where <span class="math inline">\(g(\cdot)\)</span> denotes the link function. Alternatively, we can estimate <a href="#eq:PredModel">(4.1)</a> using machine learning methods. Using the model fit, we obtain the predictions <span class="math inline">\(\widehat{\mu}_i = \widehat{f}(\boldsymbol{x}_i)\)</span>.</p>
+<div class="section level3" number="4.1">
 <h3 id="generalized-calibration-curves">
-<span class="header-section-number">3.1</span> Generalized calibration curves<a class="anchor" aria-label="anchor" href="#generalized-calibration-curves"></a>
+<span class="header-section-number">4.1</span> Generalized calibration curves<a class="anchor" aria-label="anchor" href="#generalized-calibration-curves"></a>
 </h3>
 <p>To examine the calibration of prediction models where the outcome is a member of the exponential family, we redefine the framework in more general terms. In this context, a calibration curve maps the predicted values <span class="math inline">\(f(\boldsymbol{x}_i)\)</span> to <span class="math inline">\(E[y_i| f(\boldsymbol{x}_i)]\)</span>, the actual conditional mean of <span class="math inline">\(y_i\)</span> given <span class="math inline">\(f(\boldsymbol{x}_i)\)</span>. As before, a model is perfectly calibrated if the calibration curve equals the diagonal, i.e. <span class="math inline">\(E[y_i | f(\boldsymbol{x}_i)] = f(\boldsymbol{x}_i) \ \forall \ i\)</span>. Hence, in this context, the calibration curve captures the correspondence between the predicted values and the conditional mean.</p>
 <p>We propose two methods to estimate the calibration curve. Firstly, we can estimate the calibration curve using a generalized linear model
 <span class="math display" id="eq:CalibrationGLM">\[\begin{align*}
         g(E[{}_{*} y_i | {}_{*} \widehat{\mu}_i]) = \alpha + \zeta \ g({}_{*} \widehat{\mu}_i).
-        \tag{3.3}
+        \tag{4.3}
 \end{align*}\]</span></p>
-<p>By transforming <span class="math inline">\({}_{*} \widehat{\mu}_i\)</span> using the appropriate <span class="math inline">\(g(\cdot)\)</span>, we map <span class="math inline">\({}_{*} \widehat{\mu}_i\)</span> to the whole real line to better fit the model. If <span class="math inline">\({}_{*} \widehat{\mu}_i\)</span> is estimated using a generalized linear model with the same link function (i.e. <span class="math inline">\(g(\cdot)\)</span> is identical in <a href="#eq:GLM">(3.2)</a> and <a href="#eq:CalibrationGLM">(3.3)</a>), it follows that <span class="math inline">\(g({}_{*} \widehat{\mu}_i) = {}_{*} \widehat{\eta}_i\)</span>. Using equation <a href="#eq:CalibrationGLM">(3.3)</a>, we estimate the empirical average as a function of the predicted values. Further, similarly to <a href="#eq:logcal">(1.1)</a>, <span class="math inline">\(\zeta\)</span> tells us whether the model is over- (<span class="math inline">\(\zeta &lt; 1\)</span>) or underfitted (<span class="math inline">\(\zeta &gt;1\)</span>). We estimate the calibration-in-the-large <span class="math inline">\(\alpha_c\)</span> as
+<p>By transforming <span class="math inline">\({}_{*} \widehat{\mu}_i\)</span> using the appropriate <span class="math inline">\(g(\cdot)\)</span>, we map <span class="math inline">\({}_{*} \widehat{\mu}_i\)</span> to the whole real line to better fit the model. If <span class="math inline">\({}_{*} \widehat{\mu}_i\)</span> is estimated using a generalized linear model with the same link function (i.e. <span class="math inline">\(g(\cdot)\)</span> is identical in <a href="#eq:GLM">(4.2)</a> and <a href="#eq:CalibrationGLM">(4.3)</a>), it follows that <span class="math inline">\(g({}_{*} \widehat{\mu}_i) = {}_{*} \widehat{\eta}_i\)</span>. Using equation <a href="#eq:CalibrationGLM">(4.3)</a>, we estimate the empirical average as a function of the predicted values. Further, similarly to <a href="#eq:logcal">(1.1)</a>, <span class="math inline">\(\zeta\)</span> tells us whether the model is over- (<span class="math inline">\(\zeta &lt; 1\)</span>) or underfitted (<span class="math inline">\(\zeta &gt;1\)</span>). We estimate the calibration-in-the-large <span class="math inline">\(\alpha_c\)</span> as
 <span class="math display" id="eq:CITLGLM">\[\begin{align*}
         g(E[{}_{*} y_i | {}_{*} \widehat{\mu}_i]) = \alpha_c + \text{offset}(g({}_{*} \widehat{\mu}_i)).
-        \tag{3.4}
+        \tag{4.4}
 \end{align*}\]</span>
 Hereby, we assess to which extent the observed empirical average equals the average predicted value. Secondly, as with the logistic regression model, we can employ non-parametric smoothers to estimate the calibration curve.</p>
 </div>
-<div class="section level3" number="3.2">
+<div class="section level3" number="4.2">
 <h3 id="illustration-of-the-generalized-calibration-framework">
-<span class="header-section-number">3.2</span> Illustration of the generalized calibration framework<a class="anchor" aria-label="anchor" href="#illustration-of-the-generalized-calibration-framework"></a>
+<span class="header-section-number">4.2</span> Illustration of the generalized calibration framework<a class="anchor" aria-label="anchor" href="#illustration-of-the-generalized-calibration-framework"></a>
 </h3>
-<div class="section level4" number="3.2.1">
+<div class="section level4" number="4.2.1">
 <h4 id="training-the-model-1">
-<span class="header-section-number">3.2.1</span> Training the model<a class="anchor" aria-label="anchor" href="#training-the-model-1"></a>
+<span class="header-section-number">4.2.1</span> Training the model<a class="anchor" aria-label="anchor" href="#training-the-model-1"></a>
 </h4>
 <p>To illustrate the functionality, the package has two example data sets with a poisson distributed outcome variable: <code>poissontraindata</code> and <code>poissontestdata</code>. These are two synthetically generated data sets (using the same underlying process/settings to generate the data) to illustrate the functionality of the <code>CalibrationCurves</code> package.</p>
 <p>The <code>poissontraindata</code> data frame represents the data that we will use to develop our prediction model.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"poissontraindata"</span><span class="op">)</span></span></code></pre></div>
 <p>In this data frame, we have five covariates and one response variable <code>y</code>.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">traindata</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   y          x1         x2         x3         x4</span></span>
 <span><span class="co">#&gt; 1 0 -0.19981624  0.2982990  1.0277486 -0.1146414</span></span>
@@ -548,7 +891,7 @@ Hereby, we assess to which extent the observed empirical average equals the aver
 <span><span class="co">#&gt; 5 1  1.39659613  1.1325081  0.6053029 -1.0598506</span></span>
 <span><span class="co">#&gt; 6 0 -0.04645095 -0.8167364  1.0196761 -0.4867560</span></span></code></pre></div>
 <p>Next, we fit a Poisson GLM with log link to obtain the estimated parameter vector <span class="math inline">\(\widehat{\beta}\)</span>.</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">glmFit</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="va">Y</span> <span class="op">~</span> <span class="va">.</span> , data <span class="op">=</span> <span class="va">poissontraindata</span>, family <span class="op">=</span> <span class="va">poisson</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">glmFit</span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -574,26 +917,26 @@ Hereby, we assess to which extent the observed empirical average equals the aver
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Number of Fisher Scoring iterations: 6</span></span></code></pre></div>
 </div>
-<div class="section level4" number="3.2.2">
+<div class="section level4" number="4.2.2">
 <h4 id="assessing-the-calibration-performance-1">
-<span class="header-section-number">3.2.2</span> Assessing the calibration performance<a class="anchor" aria-label="anchor" href="#assessing-the-calibration-performance-1"></a>
+<span class="header-section-number">4.2.2</span> Assessing the calibration performance<a class="anchor" aria-label="anchor" href="#assessing-the-calibration-performance-1"></a>
 </h4>
 <p>Hereafter, we assess the calibration performance on the <code>poissontestdata</code> set. Hereto, we first have to compute the predicted values on this data set.</p>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"poissontestdata"</span><span class="op">)</span></span>
 <span><span class="va">yHat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">glmFit</span>, newdata <span class="op">=</span> <span class="va">poissontestdata</span>, type <span class="op">=</span> <span class="st">"response"</span><span class="op">)</span></span></code></pre></div>
 <p>We then store the response in the <code>poissontestdata</code> in a separate vector <code>yTest</code>.</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yTest</span> <span class="op">=</span> <span class="va">poissontestdata</span><span class="op">$</span><span class="va">Y</span></span></code></pre></div>
 <p>Now we have everything we need to assess the calibration performance of our prediction model. We can use <code>genCalCurve</code> to visualize the calibration performance and to obtain the statistics. <code>genCalCurve</code> makes the plot using <code>base</code> R and a ggplot version will be included in one of the next updates.</p>
 <p>By default, the calibration curve as estimated by a GLM will be plotted. Further, in addition to the outcome and the predicted values, we have to specify the distribution of the response variable.</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">calPerf</span> <span class="op">=</span> <span class="fu"><a href="../reference/genCalCurve.html">genCalCurve</a></span><span class="op">(</span><span class="va">yTest</span>, <span class="va">yHat</span>, family <span class="op">=</span> <span class="va">poisson</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Waiting for profiling to be done...</span></span>
 <span><span class="co">#&gt; Waiting for profiling to be done...</span></span></code></pre></div>
-<p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-22-1.png" width="100%">
+<p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-23-1.png" width="100%">
 In addition to the plot, the function returns an object of the class <code>GeneralizedCalibrationCurve</code>.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">calPerf</span></span>
 <span><span class="co">#&gt; Call:</span></span>
 <span><span class="co">#&gt; genCalCurve(y = yTest, yHat = yHat, family = poisson)</span></span>
@@ -603,7 +946,7 @@ In addition to the plot, the function returns an object of the class <code>Gener
 <span><span class="co">#&gt; Calibration intercept     Calibration slope </span></span>
 <span><span class="co">#&gt;            0.02710876            0.98320991</span></span></code></pre></div>
 <p>This object contains the calculated statistics as well as the calculated coordinates of the calibration curve.</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">calPerf</span><span class="op">)</span></span>
 <span><span class="co">#&gt; List of 6</span></span>
 <span><span class="co">#&gt;  $ call             : language genCalCurve(y = yTest, yHat = yHat, family = poisson)</span></span>
@@ -622,22 +965,22 @@ In addition to the plot, the function returns an object of the class <code>Gener
 <span><span class="co">#&gt;   .. ..$ y: num [1:1000] 0.012 0.013 0.0134 0.0152 0.0159 ...</span></span>
 <span><span class="co">#&gt;  - attr(*, "class")= chr "GeneralizedCalibrationCurve"</span></span></code></pre></div>
 <p>The coordinates are stored in the <code>CalibrationCurves</code> slot and can be extracted as follows.</p>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">GLMCal</span> <span class="op">=</span> <span class="va">calPerf</span><span class="op">$</span><span class="va">CalibrationCurves</span><span class="op">$</span><span class="va">GLMCalibration</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">GLMCal</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">]</span>, type <span class="op">=</span> <span class="st">"l"</span>, xlab <span class="op">=</span> <span class="st">"Predicted value"</span>, ylab <span class="op">=</span> <span class="st">"Empirical average"</span>, lwd <span class="op">=</span> <span class="fl">2</span>, xlim <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, ylim <span class="op">=</span> <span class="fl">0</span><span class="op">:</span><span class="fl">1</span>,</span>
 <span>     col <span class="op">=</span> <span class="st">"red"</span>, lty <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html" class="external-link">abline</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, lty <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
-<p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-25-1.png" width="672"></p>
+<p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-26-1.png" width="672"></p>
 </div>
 </div>
 </div>
-<div class="section level2" number="4">
+<div class="section level2" number="5">
 <h2 id="faq">
-<span class="header-section-number">4</span> FAQ<a class="anchor" aria-label="anchor" href="#faq"></a>
+<span class="header-section-number">5</span> FAQ<a class="anchor" aria-label="anchor" href="#faq"></a>
 </h2>
-<div class="section level3" number="4.1">
+<div class="section level3" number="5.1">
 <h3 id="why-is-the-calibration-intercept-different-in-the-rms-package">
-<span class="header-section-number">4.1</span> Why is the calibration intercept different in the rms package?<a class="anchor" aria-label="anchor" href="#why-is-the-calibration-intercept-different-in-the-rms-package"></a>
+<span class="header-section-number">5.1</span> Why is the calibration intercept different in the rms package?<a class="anchor" aria-label="anchor" href="#why-is-the-calibration-intercept-different-in-the-rms-package"></a>
 </h3>
 <p>To construct the logistic calibration curve (see <a href="#how-do-we-construct-a-calibration-curve">How do we construct a calibration curve?</a>), we fit the model
 <span class="math display">\[\begin{align*}
@@ -668,16 +1011,16 @@ where we fix <span class="math inline">\(\zeta = 1\)</span> by including <span c
 </li>
 </ul>
 </div>
-<div class="section level3" number="4.2">
+<div class="section level3" number="5.2">
 <h3 id="i-have-predicted-probabilities-of-0-or-1--why-is-this-not-allowed-by-default-and-why-do-i-get-these-annoying-warning-messages">
-<span class="header-section-number">4.2</span> I have predicted probabilities of 0 or 1. Why is this not allowed by default and why do I get these annoying warning messages?<a class="anchor" aria-label="anchor" href="#i-have-predicted-probabilities-of-0-or-1--why-is-this-not-allowed-by-default-and-why-do-i-get-these-annoying-warning-messages"></a>
+<span class="header-section-number">5.2</span> I have predicted probabilities of 0 or 1. Why is this not allowed by default and why do I get these annoying warning messages?<a class="anchor" aria-label="anchor" href="#i-have-predicted-probabilities-of-0-or-1--why-is-this-not-allowed-by-default-and-why-do-i-get-these-annoying-warning-messages"></a>
 </h3>
 <p>Predicted probabilities of 0 or 1 imply that there is no more randomness and that the process is deterministic. If the process was truly deterministic, we would not have to model it. Mostly the presence of perfect predictions signifies that something went wrong when fitting the model or that the model is severely overfitted. We therefore make sure that this is not allowed by default and delete these observations. We observe this behavior in the following cases:
 <br> - logistic regression: with quasi-complete separation, the coefficients tend to infinity;
 <br> - tree-based methods: one of the leaf nodes contains only observations with either 0 or 1;
 <br> - neural networks: the weights tend to infinity and this is known as weight/gradient explosion.</p>
 <p>If you are confident that nothing is wrong with the model fit, then you can obtain a calibration curve by setting the argument <code>allowPerfectPredictions</code> to <code>TRUE</code>. In this case, predictions of 0 and 1 are replaced by values 1e-8 and 1 - 1e-8, respectively. Do take this into account when interpreting the performance measures, as these are not calculated with the original values.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">yTest</span> <span class="op">=</span> <span class="va">testdata</span><span class="op">$</span><span class="va">y</span></span>
 <span><span class="va">pHat</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">pHat</span><span class="op">)</span>, <span class="fl">5</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">]</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">1</span>, <span class="fl">5</span>, <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -690,16 +1033,19 @@ where we fix <span class="math inline">\(\zeta = 1\)</span> by including <span c
 <span><span class="co">#&gt;  - logistic regression: with quasi-complete separation, the coefficients tend to infinity;</span></span>
 <span><span class="co">#&gt;  - tree-based methods: one of the leaf nodes contains only observations with either 0 or 1;</span></span>
 <span><span class="co">#&gt;  - neural networks: the weights tend to infinity and this is known as weight/gradient explosion.</span></span></code></pre></div>
-<p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-26-1.png" width="100%"></p>
+<p><img src="CalibrationCurves_files/figure-html/unnamed-chunk-27-1.png" width="100%"></p>
 </div>
 </div>
-<div class="section level2" number="5">
+<div class="section level2" number="6">
 <h2 id="references">
-<span class="header-section-number">5</span> References<a class="anchor" aria-label="anchor" href="#references"></a>
+<span class="header-section-number">6</span> References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Alba2017" class="csl-entry">
 Alba, Ana Carolina, Thomas Agoritsas, Michael Walsh, Steven Hanna, Alfonso Iorio, P. J Devereaux, Thomas McGinn, and Gordon Guyatt. 2017. <span>“<span class="nocase">Discrimination and Calibration of Clinical Prediction Models: Users’ Guides to the Medical Literature</span>.”</span> <em>JAMA : The Journal of the American Medical Association</em> 318 (14): 1377–84.
+</div>
+<div id="ref-ClusteredCalibration" class="csl-entry">
+Barreñada, Lasai, Bavo DC Campo, Laure Wynants, and Ben Van Calster. 2025. <span>“Clustered Flexible Calibration Plots for Binary Outcomes Using Random Effects Modeling.”</span> <em>arXiv Preprint arXiv:2503.08389</em>.
 </div>
 <div id="ref-Campo2023GCF" class="csl-entry">
 De Cock Campo, Bavo. 2023. <span>“Towards Reliable Predictive Analytics: A Generalized Calibration Framework.”</span> <a href="https://arxiv.org/abs/2309.08559" class="external-link">https://arxiv.org/abs/2309.08559</a>.
@@ -715,26 +1061,26 @@ Van Calster, Ben, Daan Nieboer, Yvonne Vergouwe, Bavo De Cock, Michael J Pencina
 </div>
 </div>
 </div>
-  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
 
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Bavo De Cock Campo.</p>
+  <p>Developed by De Cock Bavo, Barrenada Lasai, Nieboer Daan, Van Calster Ben, Steyerberg Ewout, Vergouwe Yvonne.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
 </div>
 
-  
 
-  
+
+
 
   </body>
 </html>
