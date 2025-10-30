@@ -3,7 +3,7 @@ pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   CalibrationCurves: CalibrationCurves.html
-last_built: 2025-10-30T19:54Z
+last_built: 2025-10-30T20:02Z
 urls:
   reference: https://bavodc.github.io/CalibrationCurves/reference
   article: https://bavodc.github.io/CalibrationCurves/articles
